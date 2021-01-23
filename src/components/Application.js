@@ -69,7 +69,7 @@ export default function Application(props) {
     }).then(() => {setState(...state)
     }).catch(e => (console.log(e)))
   }
-
+  ////axios request to delete interview data from state and database 
   function cancelInterview(id) {
     return axios.delete(`/api/appointments/${id}`)
     .then(() => {
