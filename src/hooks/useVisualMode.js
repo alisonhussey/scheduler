@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 //helper function to transition ahead and back through components
 export default function useVisualMode(initial) {

@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 //Gets all appointment ids that match a given day
 export function getAppointmentsForDay(state, day) {
   const filteredDays = state.days.filter((eachDay) => eachDay.name === day);
