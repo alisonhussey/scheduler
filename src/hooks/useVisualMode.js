@@ -8,18 +8,18 @@ export default function useVisualMode(initial) {
   function transition(mode, replace = false) {
     if (replace === true) {
       setMode(mode)
-      setHistory([...history.slice(0, - 1), mode])
+      setHistory(prev => [...prev.slice(0, - 1), mode])
 
     } else {
       setMode(mode)
-      setHistory([...history, mode])
+      setHistory(prev => ([...prev, mode]))
     }
     
   }
   function back() {
     if (history.length > 1) {
       setMode(history[history.length - 2]);
-      setHistory(history.slice(0, - 1))
+      setHistory(prev => prev.slice(0, - 1))
     }
   }
 
