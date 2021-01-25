@@ -30,9 +30,28 @@ export default function useApplicationData() {
     })
   },[])
 
+  //function to get remaining appointments spots
+  function getRemainingSpots(newAppt) {
+    return state.days.map((day, index) => {
+      let openSpots = 0;
+      for (let id of state.days[index].appointments) {
+        if (newAppt[id].interview === null) {
+          openSpots ++;
+        }
+      } 
+      const remainingSpots = {...day, spots: openSpots}
+      return remainingSpots;
+    })
+  }
+
+
   //axios request to insert interview data from Form into the state and database 
   function bookInterview(id, interview) {
-    const appointment = {
+ 
+
+    return axios.put(`/api/appointments/${id}`, {interview})
+    .then(() => {
+      const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
     };
@@ -40,18 +59,13 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     };
-    setState({
-      ...state,
-      appointments
-    });
-    return axios.put(`/api/appointments/${id}`, {interview
-    }).then(() => {setState(...state)
-    })
+      setState(prev => ({...prev, appointments, days: getRemainingSpots(appointments)}))
+})
     .catch(e => (console.log(e)))
   }
 
   ////axios request to delete interview data from state and database 
-  function cancelInterview(id) {
+  function cancelInterview(id) {  
     return axios.delete(`/api/appointments/${id}`)
     .then(() => {
       const appointment = {
@@ -62,12 +76,7 @@ export default function useApplicationData() {
         ...state.appointments,
         [id]: appointment
       }
-      setState({
-        ...state,
-        appointments
-      });
-    })
-    .then(() => {setState(...state)})
+      setState(prev => ({...prev, appointments, days: getRemainingSpots(appointments)}))})
     .catch(e => (console.log(e)))
   }
   return {
