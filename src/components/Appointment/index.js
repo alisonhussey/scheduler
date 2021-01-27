@@ -41,7 +41,7 @@ export default function Appointment(props) {
       });
   }
 
-//deletes Form input from interview object in database, then transistions components
+  //deletes Form input from interview object in database, then transistions components
   function deletion() {
     transition(DELETING, true);
     props
@@ -71,11 +71,7 @@ export default function Appointment(props) {
         />
       )}
       {mode === CREATE && (
-        <Form
-          interviewers={props.interviewers}
-          onCancel={back}
-          onSave={save}
-        />
+        <Form interviewers={props.interviewers} onCancel={back} onSave={save} />
       )}
       {mode === SAVING && <Status message="Saving" />}
       {mode === DELETING && <Status message="Deleting" />}

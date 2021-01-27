@@ -23,7 +23,6 @@ export default function Form(props) {
 
   //saves appointment only if student name is not blank
   function validate() {
-    
     if (name === "") {
       setError("Student name cannot be blank");
       return;

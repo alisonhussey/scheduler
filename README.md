@@ -28,6 +28,7 @@ npm test
 ```sh
 npm run storybook
 ```
+
 ## Technical Specifications
 
 - React
