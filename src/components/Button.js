@@ -3,6 +3,7 @@ import classnames from "classnames";
 
 import "components/Button.scss";
 
+//Button component displays buttons everywhere in app
 export default function Button(props) {
   const buttonClass = classnames("button", {
     "button--confirm": props.confirm,

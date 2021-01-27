@@ -1,5 +1,6 @@
 import React from "react";
 
+//Status component shows a "saving" or "deleting" message and graphic as a buffer between saving/deleting appointments
 export default function Status(props) {
   return (
     <main className="appointment__card appointment__card--status">

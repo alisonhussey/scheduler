@@ -18,7 +18,7 @@ export default function DayListItem(props) {
       return `${spots} spots remaining`;
     }
   };
-
+  //Keeping this unused code here so I can revisit it, since it's a pretty cool way to do it. 
   // return (
   // spots === 0 ? "no spots remaining" : `${spots} spot${spots === 1 ? "" : "s"} remaining`
   // )

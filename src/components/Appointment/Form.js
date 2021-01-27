@@ -2,30 +2,26 @@ import React, { useState } from "react";
 
 import InterviewerList from "components/InterviewerList";
 import Button from "components/Button";
-// name="Archie Cohen"
-//           interviewers={interviewers}
-//           interviewer={interviewers[0].id}
-//           onSave={action("onSave")}
-//           onCancel={action("onCancel")}
+
+//Form component for mode when a user wants to create or edit an appointment
 export default function Form(props) {
   const [name, setName] = useState(props.name || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
   const [error, setError] = useState("");
 
+  //resets student name and interviewer in form
   const reset = function () {
     setName("");
     setInterviewer(null);
   };
 
+  //cancels appointment
   const cancel = function () {
     reset();
     props.onCancel();
   };
 
-  // const save = function() {
-  //   props.onSave(name, interviewer);
-  // }
-
+  //saves appointment only if student name is not blank
   function validate() {
     if (name === "") {
       setError("Student name cannot be blank");

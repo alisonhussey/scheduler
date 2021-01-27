@@ -10,6 +10,7 @@ import {
 } from "../helpers/selectors";
 import useApplicationData from "../hooks/useApplicationData";
 
+//Application component displays the sidebar with the days of the week and remaining spots per day
 export default function Application(props) {
   const {
     state,

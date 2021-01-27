@@ -19,21 +19,16 @@ export default function useApplicationData() {
       axios.get("/api/appointments"),
       axios.get("/api/interviewers"),
     ]).then((all) => {
-      // console.log(all)
       setState((prev) => ({
         ...prev,
         days: all[0].data,
         appointments: all[1].data,
         interviewers: all[2].data,
       }));
-
-      // const url = '/api/days';
-      // axios.get(url).then(response => {
-      // setDays([...response.data])
     });
   }, []);
 
-  //function to get remaining appointments spots
+  //function to get update remaining appointments spots after booking/cancelling
   function getRemainingSpots(newAppt) {
     return state.days.map((day, index) => {
       let openSpots = 0;

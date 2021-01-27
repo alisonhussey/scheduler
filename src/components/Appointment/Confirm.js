@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "components/Button";
 
+//Confirm component to show after a user tries to delete an appointment, before it can be permanently deleted
 export default function Confirm(props) {
   return (
     <main className="appointment__card appointment__card--confirm">

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-//helper function to transition ahead and back through components
+//helper function to transition visual components
 export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]);

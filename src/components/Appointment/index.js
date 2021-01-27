@@ -19,6 +19,7 @@ const EDIT = "EDIT";
 const ERROR_SAVE = "ERROR_SAVE";
 const ERROR_DELETE = "ERROR_DELETE";
 
+//Appointment component renders all different components condintionally depending on the mode
 export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
@@ -40,6 +41,7 @@ export default function Appointment(props) {
       });
   }
 
+//deletes Form input from interview object in database, then transistions components
   function deletion() {
     transition(DELETING, true);
     props
