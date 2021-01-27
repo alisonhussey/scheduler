@@ -34,3 +34,9 @@ npm run storybook
 - Webpack, Babel
 - Axios
 - Storybook, Webpack Dev Server, Jest, Testing Library, Cypress
+
+## Screenshots
+
+!["Screenshot of Interview Scheduler with empty appointment"](https://github.com/alisonhussey/scheduler/blob/master/docs/empty-appointment.png?raw=true)
+!["Screenshot of Interview Scheduler Form in Create mode"](https://github.com/alisonhussey/scheduler/blob/master/docs/appointment-form.png?raw=true)
+!["Screenshot of Interview Scheduler with Delete Confirm mode"](https://github.com/alisonhussey/scheduler/blob/master/docs/delete-confirmation.png?raw=true)
