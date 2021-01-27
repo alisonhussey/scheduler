@@ -51,8 +51,6 @@ describe("Application", () => {
     fireEvent.click(getByText(appointment, "Save"));
 
     expect(getByText(appointment, "Saving")).toBeInTheDocument();
-    // console.log(prettyDOM(appointment));
-    // await waitForElement(() => getByText(appointment, "Lydia Miller-Jones"));
 
     await waitForElement(() => queryByText(appointment, "Lydia Miller-Jones"));
 

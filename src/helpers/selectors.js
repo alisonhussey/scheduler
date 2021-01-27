@@ -8,7 +8,7 @@ export function getAppointmentsForDay(state, day) {
     (appointmentId) => state.appointments[appointmentId]
   );
   return appointments;
-};
+}
 
 export function getInterviewersForDay(state, day) {
   const filteredDays = state.days.filter((eachDay) => eachDay.name === day);
@@ -19,7 +19,6 @@ export function getInterviewersForDay(state, day) {
     (interviewerId) => state.interviewers[interviewerId]
   );
   return interviewers;
-
 }
 
 export function getInterview(state, interview) {
@@ -36,4 +35,4 @@ export function getInterview(state, interview) {
       },
     };
   }
-};
+}

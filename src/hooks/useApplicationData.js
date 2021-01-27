@@ -66,7 +66,9 @@ export default function useApplicationData() {
           days: getRemainingSpots(appointments),
         }));
       })
-      .catch((e) => {throw(e)});
+      .catch((e) => {
+        throw e;
+      });
   }
 
   ////axios request to delete interview data from state and database
@@ -88,7 +90,9 @@ export default function useApplicationData() {
           days: getRemainingSpots(appointments),
         }));
       })
-      .catch((e) => {throw(e)});
+      .catch((e) => {
+        throw e;
+      });
   }
   return {
     state,
